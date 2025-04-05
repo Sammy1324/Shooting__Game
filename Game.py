@@ -40,17 +40,17 @@ class Game:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:  
                     if self.player:
-                        new_shoot = Shoot(x=self.player.x + self.player.width // 2, 
+                        new_shoot = Shoot(x=self.player.x // 2, 
                                           y=self.player.y, 
                                           speed=-5, 
-                                          image_path="assets/images/Shoot.png")
+                                          image_path="assets/images/Bullet.png")
                         self.shoots.append(new_shoot)
 
     def update(self):
         if self.running:
             print("Game is updating...")
             for shoot in self.shoots[:]:
-                shoot.update()
+                shoot.move()
                 if shoot.y < 0:  
                     self.shoots.remove(shoot)
 
