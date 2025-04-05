@@ -1,5 +1,5 @@
 from Character import Character
-from Shoot import Shoot  # Import the Shoot class
+from Shoot import Shoot 
 import pygame
 
 class Player(Character):
@@ -39,14 +39,8 @@ class Player(Character):
 
     def take_hit(self):
         self.lives -= 1
-        if self.lives <= 0:
-            self.end_game()
-        else:
+        if self.lives > 0:
             self.respawn()
-
-    def end_game(self):
-        print("Game Over")
 
     def respawn(self):
         self.rect.topleft = (100, 200)
-        print("Respawning...")

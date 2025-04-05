@@ -46,13 +46,16 @@ class Game:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     if self.player:
-                        new_shoot = Shoot(
-                            x=self.player.x // 2,
-                            y=self.player.y,
-                            speed=-5,
-                            image_path="assets/images/Bullet.png"
-                        )
-                        self.shoots.append(new_shoot)
+                        self.player_shoot()
+
+    def player_shoot(self):
+        new_shoot = Shoot(
+            x=self.player.x + 2, 
+            y=self.player.y,
+            speed=-5,
+            image_path="assets/images/Bullet.png"
+        )
+        self.shoots.append(new_shoot)
 
     def update(self):
         if self.running:
@@ -85,7 +88,7 @@ class Game:
                 opponent.move()
                 if opponent:
                     new_shoot = Shoot(
-                        x=opponent.x // 2,
+                        x=opponent.x,
                         y=opponent.y,
                         speed=5,
                         image_path="assets/images/Bullet.png"
