@@ -3,7 +3,7 @@ import pygame
 
 class Character(Entity):
     def __init__(self, x, y, image, lives):
-        super().__init__(x, y, image, lives)
+        super().__init__(x, y, image)
         self.lives = lives
         self.is_alive = lives > 0
         self.image = pygame.image.load(image)  

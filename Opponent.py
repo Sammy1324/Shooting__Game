@@ -2,8 +2,8 @@ from Character import Character
 import pygame
 
 class Opponent(Character):
-    def __init__(self, x, y, image_path, speed_x=0, speed_y=0, *args, **kwargs):
-        super().__init__(x, y, image_path, *args, **kwargs)
+    def __init__(self, x, y, image_path, lives, speed_x=0, speed_y=0, *args, **kwargs):
+        super().__init__(x, y, image_path, lives, *args, **kwargs)
         self.speed_x = speed_x  
         self.speed_y = speed_y  
         self.is_star = False  

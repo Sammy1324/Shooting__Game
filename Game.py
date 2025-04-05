@@ -18,7 +18,7 @@ class Game:
         self.shoots = []  
     def setup(self):
         self.player = Player(x=100, y=200, image="assets/images/Player.png", lives=3) 
-        self.opponent = Opponent(x=400, y=300, image_path="assets/images/Opponent.png", speed_x=2, speed_y=2)
+        self.opponent = Opponent(x=400, y=300, image_path="assets/images/Opponent.png", lives=3, speed_x=2, speed_y=2)
         self.score = 0
         self.lives = 3
         self.running = True
