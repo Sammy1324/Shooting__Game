@@ -3,7 +3,7 @@ from Boss import Boss
 from Opponent import Opponent
 from Shoot import Shoot
 import pygame
-
+#corregir para que dispare 
 class Game:
     def __init__(self):
         pygame.init()
